@@ -1,12 +1,20 @@
+document.getElementById("b").addEventListener("click", e => {
+  let imageInput = document.getElementById("image-input");
+  let image = document.getElementById("img");
+  if (imageInput.value) image.src = imageInput.value;
+});
 // CARGA DE IMAGENES
 function ver(){
-    var archivo = document.getElementById("file").files[0];
-    var reader = new FileReader();
-    if (file) {
-      reader.readAsDataURL(archivo);
-      reader.onloadend = function () {
-          document.getElementById("img").src = reader.result;
-          const imagen=document.getElementById("img"); }}}
+  var archivo = document.getElementById("file").files[0];
+  var reader = new FileReader();
+  if (file) {
+    reader.readAsDataURL(archivo);
+    reader.onloadend = function () {
+        document.getElementById("img").src = reader.result;
+        const imagen=document.getElementById("img"); 
+    }
+  }
+}
   
       const searchForm = document.querySelector("#voz");
       const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
