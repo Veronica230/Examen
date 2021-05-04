@@ -73,9 +73,9 @@ if(SpeechRecognition){
         if (transcript.toLowerCase().trim() === "comando 1") { //parpadeo
           var comando = just.animate({
             targets: ".ball",
-            duration: 5024, 
+            duration: 7024, 
             web: {
-                opacity: [1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1] 
+                opacity: [1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0] 
             }});
         comando.play();}
 
@@ -83,7 +83,7 @@ if(SpeechRecognition){
       if(transcript.toLowerCase().trim()==="comando 2"){ //temblar
         var comando = just.animate({
           targets: ".ball",
-          duration: 5024,
+          duration: 7024,
           web: {
               transform: [
                 { offset: 0, value: "scale(1, 1)" },
@@ -95,6 +95,10 @@ if(SpeechRecognition){
                 { offset: 0.55, value: "scale(.80, .95)" },
                 { offset: 0.60, value: "scale(1, 1.10)" },
                 { offset: 0.65, value: "scale(1.05, 1.15)" },
+                { offset: 0.70, value: "scale(1.15, 1.25)" },
+                { offset: 0.80, value: "scale(1.05, .90)" },
+                { offset: 0.65, value: "scale(1.05, 1.15)" },
+                { offset: 0.55, value: "scale(.80, .95)" },
                 { offset: 0.70, value: "scale(1.15, 1.25)" },
                 { offset: 0.80, value: "scale(1.05, .90)" },
                 { offset: 0.90, value: "scale(.95, 1.10)" },
@@ -111,6 +115,7 @@ if(SpeechRecognition){
                     transform: [
                         { offset: 0, value: "scale(1, 1)" },
                         { offset: 1, value: "scale(2, 2)" },
+                        { offset: 1, value: "scale(3, 3)" },
                     ]}});
             comando.play();}
 
@@ -131,7 +136,8 @@ if(SpeechRecognition){
             [
               {transform: "translateY(0)"},
               {transform: "translateY(-150px)"},
-              {transform: "translateY(0px)"}
+              {transform: "translateY(0px)"},
+              {transform: "translateY(150px)"},
             ],{
               duration: 5024,
               iterations: 6 });}
@@ -146,6 +152,7 @@ if(SpeechRecognition){
                   { offset: 0, value: "scale(1, 1)" },
                   { offset: 0.5, value: "scale(1.2, .70)" },
                   { offset: 0.75, value: "scale(1.5, .50)" },
+                  { offset: 0.75, value: "scale(1.7, .80)" },
                   { offset: 1, value: "scale(1, 1)" },
                 ]}});
           comando.play();}
@@ -156,7 +163,8 @@ if(SpeechRecognition){
               targets: '.ball',
               duration: 5024,
               web: {
-                  transform: ['translateX(150px)', 'translateX(0)'] }});
+                  transform: ['translateX(150px)', 'translateX(0)', 'translateX(-150px)'] 
+              }});
 
           comando.play();}  
 
@@ -166,7 +174,7 @@ if(SpeechRecognition){
             targets: ".ball",
             duration: 5024, 
             web: {
-               opacity: [1, 0],}});
+               opacity: [1, 0,],}});
          comando.play();}
 
       //PODER VER LA IMAGEN DE NUEVO
@@ -184,7 +192,7 @@ if(SpeechRecognition){
                       targets: ".ball",
                       duration: 5024,
                       web: {
-                        marginLeft: [0,1024]}});
+                        marginLeft: [0,2024]}});
                    comando.play();}  
         
         //ANIMACIÓN ACORTAR           
@@ -193,7 +201,7 @@ if(SpeechRecognition){
                           targets: ".ball",
                           duration: 5024,
                           web: { 
-                            borderTopLeftRadius: [1500]}});
+                            borderTopLeftRadius: [2500]}});
                        comando.play();}           
 
         console.log(event); }}
