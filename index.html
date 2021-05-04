@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+  <style>
+    body {font-family: Arial, Helvetica, sans-serif;}
+    
+    /* The Modal (background) */
+    .modal {
+      display: none; /* Hidden by default */
+      position: relative; /* Stay in place */
+      text-align : center;
+      z-index: 1; /* Sit on top */
+      padding-top: 100px; /* Location of the box */
+      left: 0;
+      top: 0;
+      width: 20%; /* Full width */
+      height: 20%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
+    
+    /* Modal Content */
+    .modal-content {
+      position: relative;
+      background-color: #fefefe;
+      text-align : center;
+      margin: auto;
+      padding: 0;
+      border: 1px solid #888;
+      width: 20%;
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+      -webkit-animation-name: animatetop;
+      -webkit-animation-duration: 0.4s;
+      animation-name: animatetop;
+      animation-duration: 0.4s
+    }
+    
+    /* Add Animation */
+    @-webkit-keyframes animatetop {
+      from {top:-300px; opacity:0} 
+      to {top:0; opacity:1}
+    }
+    
+    @keyframes animatetop {
+      from {top:-300px; opacity:0}
+      to {top:0; opacity:1}
+    }
+    
+    /* The Close Button */
+    .close {
+      color: white;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+    
+    .close:hover,
+    .close:focus {
+      color: #000;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    
+    .modal-header {
+      padding: 2px 16px;
+      text-align : center;
+      position: relative; /* Stay in place */
+      background-color: #17202A;
+      color: white;
+    }
+    
+    .modal-body {padding: 2px 16px;}
+    
+    .modal-footer {
+      padding: 2px 16px;
+      background-color: #17202A;
+      color: #E26376;
+    }
+    </style>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equive="X-UA-Compatible" content="id-edge"> 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom fonts for this template -->
+  <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="css/one-page-wonder.css" rel="stylesheet">
+  <link href="" rel="stylesheet">
+
+  <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+  <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
+  <script src="https://raw.githack.com/jeromeetienne/AR.js/2.1.4/aframe/build/aframe-ar.js"></script>
+  <script defer src="main.js"></script>
+</head>
+<body style="background-image: url(background.png);"> 
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="">EXAMEN IHC</a>   
+    </div></nav>
+  <br><br><br>
+    <div class="masthead-content">
+        <section class="row mt-3">
+          <div class="row container-fluid">
+
+              <!-- Carga de imágenes -->
+              <div class="col-md-5 offset-md-1" style="color: #E26376">
+                  <div class="jumbotron col-md-12 " style=" background-color: #17202A ;">
+                      <div class="row">
+                          <h4>Carga de imágenes</h3>
+                          <div class="input-group">
+                              <div class="custom-file">
+                                  <input type="file" class="custom-file-input" id="file"
+                                      aria-describedby="inputGroupFileAddon01" onchange="ver()" >
+                                  <label class="custom-file-label" for="inputGroupFile01" style="opacity: 0.8;">Por favor, selecciona una imagen. </label></div></div></div></div>
+                  <div class="jumbotron col-md-12 " style="background-color: #17202A ;" >
+
+                    <!-- Comandoz de voz -->
+                      <h4 id="voz">Comandos de Voz</h3>
+                      <div class="row">
+                          <div class="mb-3" style="max-width: 15srem; background-color: #17202A ;">
+                              <div class="card-body">
+                                <p ALIGN="justify"><b>Comando 1. </b>(La imagen parpadea. )</p>
+                                <p ALIGN="justify"><b>Comando 2. </b>(La imagen comienza a teblar)</p>
+                                <p ALIGN="justify"><b>Comando 3. </b>(La imagen aumenta su tamaña a una escala doble.)</p>
+                                <p ALIGN="justify"><b>Comando 4. </b>(La imagen decrementa.)</p>
+                                <p ALIGN="justify"><b>Comando 5. </b>(La imagen va de arriba para abajo.)</p>
+                                <p ALIGN="justify"><b>Comando 6. </b>(La imagen se hace mas larga.)</p>
+                                <p ALIGN="justify"><b>Comando 7. </b>(La imagen sale del div de animación)</p>
+                                <p ALIGN="justify"><b>Comando 8. </b>(La imagen desaparece de la pantalla. si desea volverla a ver diga "Regresa.")</p>
+                                <p ALIGN="justify"><b>Comando 9 . </b>(La imagen se corta de el lado superior izquierdo.)</p>
+                                <p ALIGN="justify"><b>Comando 10. </b>(La imagen se mueve a la derecha.)</p>
+                                <p ALIGN="justify"><b>Ayuda del sitio. </b></p>
+                                <p ALIGN="justify"><b>Salir del sitio. </b></p>
+                              </div></div></div></div></div>
+              
+              <!-- Animaciones. -->
+              <div class="jumbotron col-md-4 offset-md-1" style="background-color: #17202A ; color: #E26376;">
+                  <h3>Zona de animación</h3>
+                  <br><br><br>
+                  <img class="rounded mx-auto d-block img-thumbnail ball" style="max-height: 250px;" id="img" >
+              </div></div></section></div></div></header>
+              
+               <!-- Copyright -->
+               <div class="text-center p-3" class="text-black" style="background-color:#17202A; color: #E26376;">
+                <a class="text-light" style="color: #E26376;"> © 2021 Verónica Pavana Lara</a></div>
+                <!-- Copyright -->
+
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header" style="padding-left: 50px;">
+      <h3 style="text-align: center;">Ayuda del sitio</h2>
+        <span class="close">&times;</span>
+    </div>
+    <div class="modal-body">
+      <h5> Carga de imágenes</h5>
+      <p>
+        Para la carga de imagenes, nos situamos en el div que contiene un text field, damos click en el boton Browse y a partir
+        de esa opción podremos elegir localmente una imagen. 
+      </p>
+      <h5>Comandos de Voz</h5>
+      <p>
+          Contamos con 12 comandos en total. 10 de ellos son para manipular animaciones y los restantes para acciones corresponidentes a la app. 
+      </p>
+    </div>
+  </div>
+
+</div>
+<!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.14.0/js/mdb.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/web-animations/2.3.1/web-animations.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/just-animate/2.5.0/just-animate-all.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/just-animate/2.5.0/just-animate-tools.min.js'></script>
