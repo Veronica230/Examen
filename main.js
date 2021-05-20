@@ -260,7 +260,7 @@ if (SpeechRecognition) {
     if (transcript.toLowerCase().trim() === "comando 10") {
       comando = just.animate({
         targets: ".ball",
-        duration: 2000,
+        duration: 8000,
         props: {
           innerHTML: ["faded", "move"],
         },
